@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7 Things Your Credit Card Company Hopes You Never Find Out</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --surface2: #222;
+  --border: #2a2a2a;
+  --red: #ef4444;
+  --red-dim: #3b0a0a;
+  --green: #22c55e;
+  --green-dim: #052e16;
+  --yellow: #facc15;
+  --text: #f0f0f0;
+  --muted: #888;
+  --faint: #444;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+.hero, .story-card, .cta-wrap, .section-header, .item, .qualify {
+  max-width: 660px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* TOP BAR */
+.topbar {
+  background: var(--red);
+  text-align: center;
+  padding: 11px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* SITE HEADER */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.site-logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+}
+.site-logo span { color: var(--red); }
+.site-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* HERO */
+.hero {
+  padding: 48px 20px 0;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--red-dim);
+  border: 1px solid var(--red);
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  margin-bottom: 24px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 7px; height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+.hero h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(30px, 6vw, 52px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.hero h1 em { font-style: normal; color: var(--red); }
+.hero h1 .num { color: var(--yellow); }
+.hero-sub {
+  font-size: 18px;
+  color: #aaa;
+  line-height: 1.65;
+  margin-bottom: 32px;
+  max-width: 580px;
+}
+.hero-sub strong { color: #fff; }
+
+/* STORY CARD */
+.story-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--yellow);
+  padding: 24px 22px;
+  margin-bottom: 40px;
+}
+.story-card .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 12px;
+}
+.story-card p {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+.story-card p:last-child { margin-bottom: 0; }
+.story-card p strong { color: #fff; }
+.story-card .attribution {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-top: 14px;
+  margin-bottom: 0;
+}
+
+/* CTA BUTTON */
+.cta-wrap {
+  padding: 0 20px;
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+.cta-btn {
+  display: block;
+  width: 100%;
+  background: var(--red);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  padding: 24px 28px;
+  border: 2px solid rgba(255,255,255,0.25);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 28px rgba(239, 68, 68, 0.45);
+}
+.cta-btn:hover {
+  background: #dc2626;
+  box-shadow: 0 6px 36px rgba(239, 68, 68, 0.65);
+  transform: translateY(-1px);
+}
+.cta-btn:active { transform: scale(0.99); }
+.cta-sub-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.cta-sub-row span::before { content: '✓ '; color: var(--green); }
+
+/* SECTION HEADER */
+.section-header {
+  padding: 0 20px 28px;
+  border-bottom: 1px solid var(--border);
+}
+.section-header .over {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.section-header h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+}
+
+/* LIST ITEM */
+.item {
+  padding: 28px 20px 16px;
+}
+.item-counter-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.item-num {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: var(--red);
+  padding: 8px 18px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.item-num.gold { background: var(--yellow); color: #111; }
+.item-counter-line { flex: 1; height: 1px; background: var(--border); }
+.item h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+.item h2 em { font-style: normal; color: var(--red); }
+.item-body { font-size: 17px; color: #bbb; line-height: 1.78; }
+.item-body p { margin-bottom: 16px; }
+.item-body p:last-child { margin-bottom: 0; }
+.item-body strong { color: #fff; font-weight: 600; }
+
+/* VIZ BLOCK */
+.viz {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 24px 22px;
+  margin: 24px 0;
+}
+.viz-label-row { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+.viz-row { margin-bottom: 18px; }
+.viz-row-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.viz-row-head .vl { font-size: 14px; font-weight: 600; color: #ddd; }
+.viz-row-head .vv { font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; flex-shrink: 0; }
+.viz-row-head .vv.good { color: var(--green); }
+.viz-row-head .vv.bad { color: var(--red); }
+.viz-track { height: 38px; background: var(--border); overflow: hidden; }
+.viz-bar { height: 100%; width: 0; display: flex; align-items: center; padding-left: 12px; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.03em; white-space: nowrap; transition: width 1.4s cubic-bezier(.4,0,.2,1); }
+.viz-bar.good { background: var(--green); }
+.viz-bar.bad { background: var(--red); }
+.viz-note { font-size: 12px; color: var(--muted); margin-top: 5px; font-weight: 500; }
+.viz-hr { border: none; border-top: 1px solid var(--faint); margin: 20px 0; }
+.viz-recap-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.viz-recap-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; padding-bottom: 20px; }
+.viz-recap-cell { display: flex; flex-direction: column; gap: 5px; }
+.viz-recap-cell:last-child { text-align: right; }
+.recap-num { font-family: "Oswald", sans-serif; font-size: clamp(36px, 8vw, 52px); font-weight: 700; line-height: 1; }
+.recap-num.red { color: var(--red); }
+.recap-num.green { color: var(--green); }
+.recap-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.viz-recap-arrow { font-size: 28px; color: var(--faint); text-align: center; }
+.viz-boom {
+  background: var(--yellow);
+  padding: 16px 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.viz-boom .boom-text { font-size: 14px; font-weight: 700; color: #111; line-height: 1.5; }
+.viz-boom .boom-num { font-family: 'Oswald', sans-serif; font-size: 48px; font-weight: 800; color: #111; line-height: 1; flex-shrink: 0; text-align: right; }
+.viz-boom .boom-num span { font-size: 13px; display: block; font-weight: 700; margin-top: 2px; font-family: 'Inter', sans-serif; }
+
+/* HIGHLIGHT BOX */
+.highlight { border-left: 3px solid var(--red); padding: 16px 18px; background: var(--red-dim); margin: 20px 0; font-size: 15px; font-weight: 600; color: #f5c0c0; line-height: 1.6; }
+.highlight strong { color: #fff; }
+.highlight.green { border-left-color: var(--green); background: var(--green-dim); color: #bbf7d0; }
+.highlight.green strong { color: #fff; }
+.highlight.yellow { border-left-color: var(--yellow); background: #1c1400; color: #fef08a; }
+.highlight.yellow strong { color: #fff; }
+
+/* COMPARISON TABLE */
+.comp { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: 14px; }
+.comp thead tr { border-bottom: 2px solid #fff; }
+.comp th { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 12px 10px 0; color: var(--muted); text-align: left; }
+.comp th:not(:first-child) { text-align: center; padding: 10px 8px; }
+.comp td { padding: 14px 12px 14px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: #aaa; vertical-align: top; line-height: 1.5; }
+.comp td:not(:first-child) { text-align: center; padding: 14px 8px; }
+.comp tr:last-child td { border-bottom: none; }
+.comp .rlabel { font-size: 13px; color: var(--muted); }
+.comp .bad { color: var(--red); font-weight: 700; }
+.comp .good { color: var(--green); font-weight: 700; }
+.comp tr:nth-child(even) td { background: var(--surface); }
+
+/* PULL STAT */
+.pull-stat { background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--yellow); padding: 24px 22px 0; margin: 24px 0; overflow: hidden; }
+.ps-label { font-size: 13px; font-weight: 600; color: var(--muted); line-height: 1.5; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.06em; }
+.ps-grid { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0; }
+.ps-cell { padding: 4px 0 24px; display: flex; flex-direction: column; gap: 4px; }
+.ps-cell:last-child { padding-left: 24px; }
+.ps-divider { background: var(--border); }
+.ps-num { font-family: "Oswald", sans-serif; font-size: clamp(44px, 10vw, 64px); font-weight: 700; color: var(--yellow); line-height: 1; display: block; }
+.ps-unit { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); display: block; }
+.ps-boom { background: var(--red); color: #fff; font-size: 16px; font-weight: 700; padding: 14px 22px; margin: 0 -22px; line-height: 1.5; }
+
+/* STATS ROW */
+.stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 24px 0; }
+.stat-box { background: var(--surface); padding: 22px 12px 18px; text-align: center; }
+.stat-box .sn { font-family: 'Oswald', sans-serif; font-size: clamp(26px, 5vw, 38px); font-weight: 800; color: var(--red); display: block; line-height: 1; }
+.stat-box .sl { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 7px; }
+
+/* QUALIFY */
+.qualify { padding: 44px 20px; }
+.qualify h3 { font-family: 'Oswald', sans-serif; font-size: clamp(22px, 4vw, 28px); font-weight: 800; color: #fff; margin-bottom: 24px; line-height: 1.2; }
+.check-row { display: grid; grid-template-columns: 28px 1fr; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 16px; color: #bbb; line-height: 1.6; }
+.check-row:last-child { border-bottom: none; }
+.check-icon { width: 28px; height: 28px; background: var(--green); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; color: #fff; flex-shrink: 0; margin-top: 2px; }
+.check-row strong { color: #fff; font-weight: 600; }
+
+/* FINAL CTA */
+.final { background: var(--surface); border-top: 3px solid var(--red); padding: 60px 20px 72px; }
+.final .inner { max-width: 660px; margin: 0 auto; text-align: center; }
+.final .over { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.final h2 { font-family: 'Oswald', sans-serif; font-size: clamp(26px, 5vw, 44px); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 14px; }
+.final .sub { font-size: 17px; color: #888; line-height: 1.65; margin-bottom: 36px; }
+.outcome-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 36px; text-align: left; }
+.oc { padding: 20px 18px; font-size: 15px; line-height: 1.6; font-weight: 500; }
+.oc .ol { font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 8px; }
+.oc.worst { background: var(--red-dim); color: #f5c0c0; border: 1px solid #7f1d1d; }
+.oc.worst .ol { color: #f87171; }
+.oc.best { background: var(--green-dim); color: #bbf7d0; border: 1px solid #14532d; }
+.oc.best .ol { color: var(--green); }
+.final .cta-btn { font-size: 20px; padding: 22px 32px; }
+.final .cta-sub-row { color: #555; }
+.final .cta-sub-row span::before { color: #4ade80; }
+.final-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; }
+.final-stats .stat-box { background: #111; }
+.final-stats .stat-box .sn { color: var(--yellow); }
+
+/* DISCLAIMER */
+.disclaimer { background: #0a0a0a; padding: 20px; font-size: 11px; color: #444; text-align: center; line-height: 1.7; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 600px) {
+  .outcome-row { grid-template-columns: 1fr; }
+  .viz-total { flex-direction: column; align-items: flex-start; }
+  .item h2 { font-size: 28px; line-height: 1.15; }
+  .hero h1 { font-size: 34px; }
+  .viz-boom { flex-direction: column; text-align: center; gap: 12px; padding: 20px 18px; }
+  .viz-boom .boom-num { font-size: 58px; text-align: center; }
+  .viz-boom .boom-text { font-size: 15px; text-align: center; }
+  .cta-btn { font-size: 17px; padding: 20px; }
+  .item { padding: 36px 18px; }
+  .ps-grid { grid-template-columns: 1fr; gap: 0; }
+  .ps-divider { display: none; }
+  .ps-cell:last-child { padding-left: 0; padding-top: 16px; border-top: 1px solid var(--border); }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">🔴 &nbsp;Financial Alert — Government-Regulated Debt Relief Program 2026</div>
+
+<!-- HERO -->
+<div class="hero reveal">
+  <div class="hero-eyebrow">Debt Relief · Updated <span id="current-month"></span></div>
+  <h1><span class="num">7</span> Breakthroughs That Got Me Out Of <em>$32,781</em> In Credit Card Debt Before My 30th Birthday</h1>
+  <p class="hero-sub">Most Americans with $10,000+ in debt are playing by rules written by the banks — <strong>for the banks.</strong> Here's what they're hiding, and what you can do about it right now.</p>
+</div>
+
+<!-- PAST DUE IMAGE -->
+<div style="max-width: 660px; margin: 0 auto; padding: 0 20px;">
+  <img src="https://raw.githubusercontent.com/griffendea/landers/refs/heads/main/past-due.png" alt="Past due bill" style="width: 100%; display: block;">
+</div>
+
+<!-- ITEM 1 -->
+<div class="item reveal">
+  <div class="item-counter-row">
+    <div class="item-num">01 of 07</div>
+    <div class="item-counter-line"></div>
+  </div>
+  <h2>You're Not Paying Off Debt.<br>You're <em>Renting It.</em></h2>
+  <div class="item-body">
+    <p>I paid <strong>$847 a month for three years straight.</strong> Never missed once. You know how much my balance went down? <strong>$1,200. Total. In three years.</strong></p>
+    <p>Out of every $847 I paid, only $175 was touching my actual balance. The other $672 went straight to the bank — every single month. More than I spend on gas and groceries combined. That's when it hit me: I wasn't paying off my debt. I was making a credit card company rich.</p>
+    <div class="viz">
+      <div class="viz-label-row">Where your $847 monthly payment actually goes</div>
+      <div class="viz-row">
+        <div class="viz-row-head">
+          <span class="vl">Goes toward your actual balance</span>
+          <span class="vv good">$175</span>
+        </div>
+        <div class="viz-track"><div class="viz-bar good vb1">21% of your payment</div></div>
+        <div class="viz-note">That's 21 cents of every dollar you pay</div>
+      </div>
+      <div class="viz-row">
+        <div class="viz-row-head">
+          <span class="vl">Goes straight to the bank</span>
+          <span class="vv bad">$672</span>
+        </div>
+        <div class="viz-track"><div class="viz-bar bad vb2">79% — gone forever</div></div>
+        <div class="viz-note">More than most people spend on gas <em>and</em> groceries combined — every single month</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ITEM 2 -->
+<div class="item reveal">
+  <div class="item-counter-row">
+    <div class="item-num">02 of 07</div>
+    <div class="item-counter-line"></div>
+  </div>
+  <h2>Big Banks Would Rather <em>Settle for 40 Cents on the Dollar</em> Now Than Risk Non-Payment Later</h2>
+  <div class="item-body">
+    <p>Here's what nobody explains: credit card companies already lose billions every year from people who simply can't pay. They've built that loss into their business model.</p>
+    <p>So when a professional negotiator shows up with real money on the table, most major credit card issuers — Chase, Capital One, Discover, Amex, and the rest — will often settle for 40–60 cents on the dollar — and in some cases, even less — rather than risk getting nothing at all.</p>
+    <div class="highlight green" style="font-size: 18px; line-height: 1.65;">
+      <strong>This is legal, regulated, and has been happening since 2002.</strong> It's not a loophole — it's a regulated negotiation process that has quietly wiped billions off American credit card balances. The banks despise it. But they can't stop it.
+    </div>
+  </div>
+</div>
+
+<!-- CTA AFTER ITEM 2 -->
+<div class="cta-wrap reveal">
+  <a href="https://path.thedebthelp.com/click" class="cta-btn">See If You Can Get Up To 80% Of Your Debt Erased →</a>
+</div>
+
+<!-- ITEM 3 -->
+<div class="item reveal">
+  <div class="item-counter-row">
+    <div class="item-num">03 of 07</div>
+    <div class="item-counter-line"></div>
+  </div>
+  <h2>Debt Consolidation Is <em>Not</em> the Same Thing — and the Difference Is Enormous</h2>
+  <div class="item-body">
+    <p>They sound similar. They produce completely different outcomes.</p>
+    <table class="comp">
+      <thead>
+        <tr><th></th><th>Consolidation</th><th>Debt Relief</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rlabel">What it does</td><td class="bad">Moves debt to new loan</td><td class="good">Negotiates balance forgiven</td></tr>
+        <tr><td class="rlabel">Your balance</td><td class="bad">Stays the same</td><td class="good">Reduced 40–80%</td></tr>
+        <tr><td class="rlabel">What you pay</td><td class="bad">Full amount + interest</td><td class="good">A fraction of what you owe</td></tr>
+        <tr><td class="rlabel">The real result</td><td class="bad">Stalling tactic</td><td class="good">An actual exit</td></tr>
+      </tbody>
+    </table>
+    <p>One of these lets the banks keep winning. The other doesn't.</p>
+  </div>
+</div>
+
+<!-- ITEM 4 -->
+<div class="item reveal">
+  <div class="item-counter-row">
+    <div class="item-num">04 of 07</div>
+    <div class="item-counter-line"></div>
+  </div>
+  <h2>Rates Just Hit a Record High — <em>Every Month You Wait Costs You Hundreds</em></h2>
+  <div class="item-body">
+    <p>The average credit card APR has surpassed 29% — the highest it's ever been. The hole gets deeper every single month you do nothing.</p>
+    <div class="pull-stat">
+      <div class="ps-label">On a $25,000 balance at 29% APR — every cent of this goes straight to the bank, not your debt</div>
+      <div class="ps-grid">
+        <div class="ps-cell">
+          <span class="ps-num">$604</span>
+          <span class="ps-unit">per month</span>
+        </div>
+        <div class="ps-divider"></div>
+        <div class="ps-cell">
+          <span class="ps-num">$7,248</span>
+          <span class="ps-unit">per year</span>
+        </div>
+      </div>
+      <div class="ps-boom">None of it touches your balance. Every dollar is pure profit for the bank.</div>
+    </div>
+    <p>The banks are collecting thousands from you right now, this month, while you're reading this. <strong>Every day you wait is a day they win.</strong></p>
+  </div>
+</div>
+
+<!-- MID CTA -->
+<div class="cta-wrap reveal" style="padding-top:0;">
+  <a href="https://path.thedebthelp.com/click" class="cta-btn">Stop Burning $600 a Month — Check Now, It's Free!</a>
+</div>
+
+<!-- ITEM 5 -->
+<div class="item reveal">
+  <div class="item-counter-row">
+    <div class="item-num">05 of 07</div>
+    <div class="item-counter-line"></div>
+  </div>
+  <h2>"Protecting My Credit Score" Might Be <em>Costing You $30,000</em></h2>
+  <div class="item-body">
+    <p>This is the one that keeps the most people stuck. "I can't do anything that hurts my credit."</p>
+    <p>Ask yourself honestly: <strong>what is a 720 credit score actually worth to you if you're drowning in $40,000 of debt at 29% interest?</strong></p>
+    <div class="highlight yellow">
+      <strong>Most people in debt relief programs see their credit recover and improve within 12–24 months of resolving.</strong> The score dips temporarily. The debt goes away permanently.
+    </div>
+    <p>You're not protecting an asset. You're protecting the bank's revenue stream at the expense of your own future.</p>
+  </div>
+</div>
+
+<!-- ITEM 6 -->
+<div class="item reveal">
+  <div class="item-counter-row">
+    <div class="item-num">06 of 07</div>
+    <div class="item-counter-line"></div>
+  </div>
+  <h2>Over 1 Million Americans Have Already Done This. <em>$19 Billion in Debt — Gone.</em></h2>
+  <div class="item-body">
+    <p>This isn't new or unproven. The American Association for Debt Resolution has overseen this process since 2002. Thousands of verified reviews. A+ BBB rating.</p>
+    <div class="stats-row">
+      <div class="stat-box"><span class="sn">$19B+</span><span class="sl">Debt Resolved</span></div>
+      <div class="stat-box"><span class="sn">1M+</span><span class="sl">Clients Served</span></div>
+      <div class="stat-box"><span class="sn">A+</span><span class="sl">BBB Rated</span></div>
+    </div>
+    <p>Someone with $40,000 in credit card debt could walk away having paid just $14,000–$18,000 total. One client with $87,000 paid just $24,000. <strong>The average client eliminates 50–70% of what they owe.</strong> That's not an outlier. That's the normal outcome.</p>
+  </div>
+</div>
+
+<!-- ITEM 7 -->
+<div class="item reveal" style="border-bottom:none; padding-bottom: 0;">
+  <div class="item-counter-row">
+    <div class="item-num gold">07 of 07</div>
+    <div class="item-counter-line"></div>
+  </div>
+  <h2>Checking If You Qualify Takes <em>2 Minutes</em> and Costs Nothing</h2>
+  <div class="item-body">
+    <p>Everything above means nothing if you don't take one small action right now.</p>
+    <p>Checking is 100% free, completely confidential, and carries zero risk. Your creditors will never know you looked. No credit card. No obligation. Doesn't affect your credit score.</p>
+
+    <div class="check-row">
+      <div class="check-icon">✓</div>
+      <div>You have <strong>$10,000 or more</strong> in unsecured debt — credit cards, personal loans, or medical bills</div>
+    </div>
+    <div class="check-row">
+      <div class="check-icon">✓</div>
+      <div>You're struggling with payments — whether you're behind, barely keeping up, or just drowning in interest</div>
+    </div>
+    <div class="check-row">
+      <div class="check-icon">✓</div>
+      <div>You want to avoid bankruptcy and need a <strong>real, legal way out</strong></div>
+    </div>
+    <div class="check-row" style="border-bottom:none;">
+      <div class="check-icon">✓</div>
+      <div>You haven't enrolled in another debt relief program in the past 12 months</div>
+    </div>
+
+    <div class="outcome-row" style="margin-top: 28px;">
+      <div class="oc worst">
+        <span class="ol">Worst Case</span>
+        You don't qualify. You spent two minutes. You lose nothing.
+      </div>
+      <div class="oc best">
+        <span class="ol">Best Case</span>
+        You qualify and eliminate up to 80% of what you owe — without bankruptcy or loans.
+      </div>
+    </div>
+
+    <p style="color:#888; font-size:16px;">The people who regret it most are the ones who waited. Not because it stopped working — but because every extra month cost them hundreds more in interest they'll never get back. <strong style="color:#fff;">"I just wish someone had told me sooner."</strong></p>
+  </div>
+</div>
+
+<!-- HARD CLOSE CTA -->
+<div class="item reveal" style="border-bottom:none; background: var(--surface); border-top: 3px solid var(--red); padding-top: 40px; padding-bottom: 48px; margin-top: 48px; margin-bottom: 48px;">
+  <a href="https://path.thedebthelp.com/click" class="cta-btn" style="font-size:20px; padding: 22px 32px;">YES! Show Me How Much I Can Save<span style="display:block; font-size:13px; font-weight:600; letter-spacing:0.08em; margin-top:6px; opacity:0.85;">FREE 60-SECOND CHECK</span></a>
+  <div class="stats-row" style="margin-top: 32px;">
+    <div class="stat-box" style="background:#111;"><span class="sn" style="color:var(--yellow);">$19B+</span><span class="sl">Debt Resolved</span></div>
+    <div class="stat-box" style="background:#111;"><span class="sn" style="color:var(--yellow);">1M+</span><span class="sl">Clients Served</span></div>
+    <div class="stat-box" style="background:#111;"><span class="sn" style="color:var(--yellow);">A+</span><span class="sl">BBB Rated</span></div>
+  </div>
+</div>
+
+<div class="disclaimer">
+  Results vary based on individual financial circumstances, debt amount, and creditor policies. This is not legal or financial advice. Finance Freedom Family is an independent editorial publication. Program availability subject to change. Debt relief may temporarily affect your credit score.
+</div>
+
+<script>
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const now = new Date();
+document.getElementById('current-month').textContent = months[now.getMonth()] + ' ' + now.getFullYear();
+
+const io = new IntersectionObserver(e => {
+  e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const vizIO = new IntersectionObserver(e => {
+  e.forEach(x => {
+    if (x.isIntersecting) {
+      setTimeout(() => {
+        x.target.querySelector('.vb1').style.width = '21%';
+        x.target.querySelector('.vb2').style.width = '79%';
+      }, 250);
+      vizIO.unobserve(x.target);
+    }
+  });
+}, { threshold: 0.3 });
+const vb = document.querySelector('.viz');
+if (vb) vizIO.observe(vb);
+
+// Forward tracking params (clickid, sub1-sub12, utm_*, etc.) from the
+// lander's URL onto every CTA offer link, so RedTrack can attribute the
+// click on the offer side instead of seeing an empty clickid.
+(function forwardTrackingParams() {
+  const incomingParams = new URLSearchParams(window.location.search);
+  if ([...incomingParams].length === 0) return;
+
+  document.querySelectorAll('a.cta-btn[href]').forEach(link => {
+    try {
+      const url = new URL(link.getAttribute('href'), window.location.href);
+      incomingParams.forEach((value, key) => {
+        url.searchParams.set(key, value);
+      });
+      link.setAttribute('href', url.toString());
+    } catch (e) {
+      // leave the link untouched if it's not a valid absolute URL
+    }
+  });
+})();
+</script>
+</body>
+</html>
